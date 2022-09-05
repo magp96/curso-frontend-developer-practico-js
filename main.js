@@ -7,11 +7,14 @@ const asideCart = document.querySelector('.product-detail');
 const productContainer = document.querySelector('.cards-container');
 const productCont = document.querySelector('.detail-product');
 const closeDetail = document.querySelector('.detail-product-close');
+const contadorProduct = document.querySelector('#contador-product');
+let cont = 0;
 
 navEmail.addEventListener('click',toggleMenu);
 navMobile.addEventListener('click',togglemobile);
 navIconCart.addEventListener('click', togglecart);
 closeDetail.addEventListener('click',closeDetailProduct);
+
 
 
 
@@ -63,7 +66,7 @@ productsList.push({
 });
 
 productsList.push({
-    name: "pantala",
+    name: "pantalla",
     precio: 2200,
     imagen: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 });
@@ -96,6 +99,7 @@ function showProducts(list){
         const productFigure = document.createElement('figure');
         const productImgCart = document.createElement('img');
         productImgCart.setAttribute('src','./icons/bt_add_to_cart.svg');
+        productFigure.addEventListener('click', addProduct);
     
         //maquetacion de todos los elementos html
         productCard.appendChild(productImg);
@@ -125,3 +129,10 @@ function closeDetailProduct(){
     productCont.classList.add('inactive');
 }
 showProducts(productsList);
+
+function addProduct(){
+    cont +=1;
+    console.log(cont);
+    contadorProduct.style.display = 'flex';
+    contadorProduct.innerText=cont;
+}
