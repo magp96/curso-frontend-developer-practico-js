@@ -249,12 +249,17 @@ nav {
 }
 .product-card {
   width: 240px;
+  border-radius: 7px;
 }
+
+.product-card:hover {
+  box-shadow: 1px 1px 1px 2px #d9f8dd;
+}
+
 .product-card img {
   width: 240px;
   height: 240px;
-  border-radius: 20px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .product-info {
   display: flex;

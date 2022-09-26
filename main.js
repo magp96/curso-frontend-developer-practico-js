@@ -8,12 +8,15 @@ const productContainer = document.querySelector('.cards-container');
 const productCont = document.querySelector('.detail-product');
 const closeDetail = document.querySelector('.detail-product-close');
 const contadorProduct = document.querySelector('#contador-product');
+const closeCart = document.querySelector('.arrow-close')
+
 let cont = 0;
 
 navEmail.addEventListener('click',toggleMenu);
 navMobile.addEventListener('click',togglemobile);
 navIconCart.addEventListener('click', togglecart);
-closeDetail.addEventListener('click',closeDetailProduct);
+closeDetail.addEventListener('click', closeDetailProduct);
+closeCart.addEventListener('click', togglecart);
 
 
 
@@ -51,34 +54,34 @@ productsList.push({
 productsList.push({
     name: "pantala",
     precio: 2200,
-    imagen: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/LG_L194WT-SF_LCD_monitor.jpg/800px-LG_L194WT-SF_LCD_monitor.jpg'
 });
 
 productsList.push({
     name: "mouse",
     precio: 1060,
-    imagen: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    imagen: 'https://resource.logitech.com/content/dam/gaming/en/products/refreshed-g203/g203-black-gallery-1.png'
 });
 productsList.push({
-    name: "Bike",
+    name: "Bike2",
     precio: 1200,
     imagen: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 });
 
 productsList.push({
-    name: "pantalla",
+    name: "pantalla2",
     precio: 2200,
-    imagen: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/LG_L194WT-SF_LCD_monitor.jpg/800px-LG_L194WT-SF_LCD_monitor.jpg'
 });
 
 productsList.push({
-    name: "mouse",
+    name: "mouse2",
     precio: 1060,
-    imagen: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    imagen: 'https://resource.logitech.com/content/dam/gaming/en/products/refreshed-g203/g203-black-gallery-1.png'
 });
 
 
-function showProducts(list){
+function showProducts(list){// maquetación de elementos necesarios para mostrar los productos
     for(product of list){
 
         const productCard =  document.createElement('div');
@@ -101,7 +104,7 @@ function showProducts(list){
         productImgCart.setAttribute('src','./icons/bt_add_to_cart.svg');
         productFigure.addEventListener('click', addProduct);
     
-        //maquetacion de todos los elementos html
+        //ensamblaje de todos los elementos html necesarios de los productos 
         productCard.appendChild(productImg);
         productCard.appendChild(productInf);
     
@@ -128,11 +131,15 @@ function openDetailProduct(){
 function closeDetailProduct(){
     productCont.classList.add('inactive');
 }
+
 showProducts(productsList);
 
 function addProduct(){
-    cont +=1;
-    console.log(cont);
+    cont += 1;
     contadorProduct.style.display = 'flex';
     contadorProduct.innerText=cont;
+}
+
+function addToCart() {
+    
 }
