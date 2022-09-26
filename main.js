@@ -26,8 +26,7 @@ function togglecart(){
     menuEmail.classList.add('inactive');
     menuMobile.classList.add('inactive');
     closeDetailProduct(); 
-    asideCart.classList.toggle('inactive');
-        
+    asideCart.classList.toggle('inactive');    
 }
 
 function togglemobile(){
